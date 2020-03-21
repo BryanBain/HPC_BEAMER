@@ -144,47 +144,6 @@ Find the component form and exact magnitude of $\overrightarrow{AB}$ for each.  
 \end{center}
 \end{frame}
 
-% \begin{frame}{Operation Properties of Vectors}
-% The component form of vectors allows us to justify the following properties for $\vec{v}=\langle v_1, v_2 \rangle$ and $\vec{w}=\langle w_1, w_2 \rangle$: \newline\\
-% \begin{itemize}
-%     \onslide<2->{\item $\vec{v} + \vec{w} = \langle v_1 + w_1, v_2 + w_2 \rangle$}
-%     \onslide<3->{\item $\vec{v} - \vec{w} = \langle v_1 - w_1, v_2 - w_2 \rangle$}
-%     \onslide<4->{\item $\vec{v} + \vec{w} = \vec{w} + \vec{v}$ (Commutative Prop.)}
-%     \onslide<5->{\item $(\vec{u} + \vec{v}) + \vec{w} = \vec{u} + (\vec{v} + \vec{w})$ (Associative Prop.)}
-%     \onslide<6->{\item $\vec{v} + \vec{0} = \vec{v}$ (Identity Property)}
-%     \onslide<7->{\item $\vec{v} + (-\vec{v}) = 0$ (Inverse Prop.)}
-% \end{itemize}    
-% \end{frame}
-
-% \begin{frame}{Example 2}
-%     Let $\vec{v} = \langle 3, 4 \rangle$ and suppose $w = \overrightarrow{PQ}$ where $P(-3, 7)$ and $Q(-2, 5)$. Find $\vec{v} + \vec{w}$ and interpret the result geometrically.
-%     \begin{align*}
-%         \onslide<2->{\vec{w} &= \langle -2-(-3), 5-7\rangle} \\[11pt]
-%         \onslide<3->{&= \langle 1,-2\rangle} \\[11pt]
-%         \onslide<4->{\vec{v}+\vec{w} &= \langle 3+1, 4-2\rangle} \\[11pt]
-%         \onslide<5->{&=\langle 4, 2\rangle}
-%     \end{align*}
-% \end{frame}
-
-% \begin{frame}{Example 2}
-%     Geometrically, $\vec{v}+\vec{w}$ is as follows:
-% \begin{center}
-% \begin{tikzpicture}[scale=0.8]
-%     \draw [dotted] (-2.5,-2.5) grid (5,5);
-%     \draw [<->,>=stealth] (-2.5,0) -- (5.5,0) node [right] {$x$};
-%     \draw [<->,>=stealth] (0,-2.5) -- (0,5.5) node [right] {$y$};
-%     \foreach \x in {-2,-1,,1,2,3,4,5}
-%     \draw (\x, 0.1) -- (\x,-0.1) node [below] {$\x$};
-%     \foreach \y in {-2,-1,,1,2,3,4,5}
-%     \draw (0.1,\y) -- (-0.1,\y) node [left] {$\y$};
-%     \draw [-{Stealth}, very thick, color=blue] (0,0) -- (3,4) node [midway, above] {$\vec{v}$};
-%     \draw [-{Stealth}, very thick, color=red] (3,4) -- +(1,-2) node [midway, above right] {$\vec{w}$};
-%     \draw [-{Stealth}, very thick, dashed, color=red] (0,0) -- (1,-2);
-%     \draw [-{Stealth}, very thick, color=blue, dashed] (1,-2) -- +(3,4);
-%     \draw [-{Stealth}, very thick, color=violet] (0,0) -- (4,2) node [midway, sloped, above] {$\vec{v}+\vec{w}$};
-% \end{tikzpicture}
-% \end{center}
-% \end{frame}
 
 \begin{frame}{Scalar Multiplication}
 If we multiply our vector by a real number (a \alert{scalar}), we get a new vector.    \newline\\
@@ -195,12 +154,12 @@ If we multiply our vector by a real number (a \alert{scalar}), we get a new vect
     \coordinate (C) at (3,0);
     \coordinate (D) at (1,-1);
     \draw [-{Stealth}] (A) -- (B);
-    \onslide<2->{\draw [-{Stealth}] (C) -- (D)};
+	\onslide<2->{\draw [-{Stealth}] (C) -- (D);}
     \node at (1,0.5) [below right, yshift=0.15cm] {$\vec{v}$};
-    \onslide<2->{\node at (2,-0.5) [below right, yshift = 0.15cm] {$-\vec{v}$}};
+    \onslide<2->{\node at (2,-0.5) [below right, yshift = 0.15cm] {$-\vec{v}$};}
     \coordinate (E) at (5,0);
     \coordinate (F) at (9,2);
-    \onslide<3->{\draw [-{Stealth}] (E) -- (F) node [midway, below right] {$2\vec{v}$}};
+    \onslide<3->{\draw [-{Stealth}] (E) -- (F) node [midway, below right] {$2\vec{v}$};}
 \end{tikzpicture}   \\[11pt]
 \onslide<4->{Scalar multiplication ``distributes" the scalar to both horizontal and vertical component.}
 \end{frame}
