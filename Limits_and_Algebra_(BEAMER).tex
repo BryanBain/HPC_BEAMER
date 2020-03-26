@@ -203,4 +203,88 @@ $a - \sqrt{b}$ & $a + \sqrt{b}$ \\
 \onslide<6->{&= 2\sqrt{3}}
 \end{align*}
 \end{frame}
+
+\section{Limits with Absolute Value}
+
+\begin{frame}{Limits and Absolute Value}
+With absolute value, it might be better to use a table or a graph to find the limit.	\newline\\ \pause
+
+Also, look at the left-hand and right-hand limits.
+\end{frame}
+
+\begin{frame}{Example 4}
+Find the limit for each.	\newline\\
+(a) \quad $\lim_{x\to 7} \frac{|x-7|}{x-7}$	\newline\\
+
+\begin{minipage}{0.6\textwidth}
+\onslide<2->{
+\begin{tikzpicture}[scale=0.7]
+\begin{axis}[
+axis lines = middle,
+grid,
+xmin = 2, xmax = 9,
+ymin = -4, ymax = 4,
+xtick = {3,...,9},
+ytick = {-4,-3,...,4}
+]
+\addplot[color=blue, domain=1:6.99, ultra thick] {abs(x-7)/(x-7)};
+\addplot[color=blue, domain=7.01:9, ultra thick] {abs(x-7)/(x-7)};
+\end{axis}
+\end{tikzpicture}}
+\end{minipage}
+\hspace{0.25cm}
+\begin{minipage}{0.3\textwidth}
+\begin{align*}
+\onslide<3->{& \lim_{x\to 7^-} \frac{|x-7|}{x-7}} 
+\onslide<4->{= -1} \\[10pt]
+\onslide<5->{& \lim_{x\to 7^+} \frac{|x-7|}{x-7}} 
+\onslide<6->{= 1} \\[10pt]
+\onslide<7->{& \text{\alert{Does Not Exist}}}
+\end{align*}
+\end{minipage}
+\end{frame}
+
+\begin{frame}{Example 4}
+(b) \quad $\lim_{x \to 6^+} \frac{6-x}{|x-6|}$	\newline\\
+\begin{minipage}{0.6\textwidth}
+\onslide<2->{
+\begin{tikzpicture}[scale=0.7]
+\begin{axis}[
+	axis lines = middle,
+	grid,
+	xmin = 3, xmax = 9,
+	ymin = -3, ymax = 3,
+	xtick = {3,4,...,9},
+	ytick = {-3,-2,...,3}
+]
+	\addplot[color=blue, ultra thick, domain=6.01:9] {(6-x)/abs(x-6)};
+	\addplot[color=blue, ultra thick, domain=3:5.99] {(6-x)/abs(x-6)};
+\end{axis}
+\end{tikzpicture}}
+\end{minipage}
+\hspace{0.25cm}
+\begin{minipage}{0.3\textwidth}
+\begin{align*}
+\onslide<3->{& \lim_{x \to 6^+} \frac{6-x}{|x-6|}}
+\onslide<4->{&= \alert{-1}} \\
+\end{align*}
+\end{minipage}
+\end{frame}
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
