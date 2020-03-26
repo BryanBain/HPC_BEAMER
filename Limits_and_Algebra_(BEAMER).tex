@@ -136,5 +136,71 @@ Evaluate each.	\newline\\
 
 \section{Limits with Radicals}
 
+\begin{frame}{Radicals}
+When working with radicals, multiply by the \alert{conjugate}.	\newline\\
 
+\begin{center}
+\begin{tabular}{cc}
+\textbf{Expression} & \textbf{Conjugate} \\[6pt]
+$a + \sqrt{b}$ & $a - \sqrt{b}$ \\[6pt]
+$a - \sqrt{b}$ & $a + \sqrt{b}$ \\
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Example 3}
+(a) \quad $\lim_{x\to 0} \left(\frac{\sqrt{25-x}-5}{x}\right)$	
+\begin{align*}
+\onslide<2->{\lim_{x\to 0} \left(\frac{\sqrt{25-x}-5}{x}\right) &= \lim_{x\to 0} \left(\frac{\sqrt{25-x}-5}{x}\right)\left(\frac{\sqrt{25-x}+5}{\sqrt{25-x}+5}\right)}	\\[8pt]
+\onslide<3->{&= \lim_{x\to 0} \frac{25-x-25}{x\left(\sqrt{25-x}+5\right)}}	\\[8pt]
+\onslide<4->{&= \lim_{x\to 0} \frac{-x}{x\left(\sqrt{25-x}+5\right)}}	\\
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 3}
+\begin{align*}
+&= \lim_{x\to 0} \frac{-1}{\sqrt{25-x}+5}	\\[8pt]
+\onslide<2->{&= \frac{-1}{\sqrt{25-0}+5}}	\\[8pt]
+\onslide<3->{&= \frac{-1}{10}}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 3}
+(b) \quad $\lim_{h\to 0} \left(\frac{\sqrt{16+h}-4}{h}\right)$
+\begin{align*}
+\onslide<2->{\lim_{h\to 0} \left(\frac{\sqrt{16+h}-4}{h}\right) &= \lim_{h\to 0} \left(\frac{\sqrt{16+h}-4}{h}\right)\left(\frac{\sqrt{16+h}+4}{\sqrt{16+h}+4}\right)}	\\[8pt]
+\onslide<3->{&= \lim_{h\to 0} \frac{16+h-16}{h\left(\sqrt{16+h}+4\right)}} \\[8pt]
+\onslide<4->{&= \lim_{h\to 0} \frac{h}{h\left(\sqrt{16+h}+4\right)}}	\\
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 3}
+\begin{align*}
+&= \lim_{h\to 0} \frac{1}{\sqrt{16+h}+4}	\\[8pt]
+\onslide<2->{&= \frac{1}{\sqrt{16+0}+4}} \\[8pt]
+\onslide<3->{&= \frac{1}{8}}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 3}
+(c) $\lim_{x\to 4} \frac{4-x}{\sqrt{x}-2}$
+\begin{align*}
+\onslide<2->{\lim_{x\to 4} \frac{4-x}{\sqrt{x}-2} &= \lim_{x\to 4} \frac{4-x}{\sqrt{x}-2} \left(\frac{\sqrt{x}+2}{\sqrt{x}+2}\right)} \\[8pt]
+\onslide<3->{&= \lim_{x\to 4} \frac{(4-x)(\sqrt{x}+2)}{x-4}} \\[8pt]
+\onslide<4->{&= \lim_{x\to 4} -1(\sqrt{x}+2)}	\\[8pt]
+\onslide<5->{&= -1(\sqrt{4}+2)} \\[8pt]
+\onslide<6->{&= -1(2+2) = -4}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 3}
+(d) \quad $\lim_{x\to 3} \frac{x-3}{\sqrt{x}-\sqrt{3}}$
+\begin{align*}
+\onslide<2->{\lim_{x\to 3} \frac{x-3}{\sqrt{x}-\sqrt{3}} &= \lim_{x\to 3} \frac{x-3}{\sqrt{x}-\sqrt{3}}\left(\frac{\sqrt{x}+\sqrt{3}}{\sqrt{x}+\sqrt{3}}\right)}	\\[8pt]
+\onslide<3->{&= \lim_{x\to 3} \frac{(x-3)(\sqrt{x}+\sqrt{3})}{x-3}} \\[8pt]
+\onslide<4->{&= \lim_{x\to 3} (\sqrt{x}+\sqrt{3})} \\[8pt]
+\onslide<5->{&= \sqrt{3}+\sqrt{3}} \\[8pt]
+\onslide<6->{&= 2\sqrt{3}}
+\end{align*}
+\end{frame}
 \end{document}
