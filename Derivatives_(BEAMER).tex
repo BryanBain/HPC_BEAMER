@@ -1,0 +1,150 @@
+\documentclass[t]{beamer}
+\usetheme{Copenhagen}
+\usepackage{amsmath, tikz, bm, pgfplots,cancel}
+\tikzset{>=stealth}
+\pgfplotsset{compat=newest}
+\pgfplotsset{every tick label/.append style={font=\scriptsize}}
+\setbeamertemplate{headline}{} % remove toc from headers
+\beamertemplatenavigationsymbolsempty
+\everymath{\displaystyle}
+% \usepackage[utf8]{inputenc}
+
+\title{Derivatives}
+\author{}
+\date{}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Objectives}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\begin{frame}{}
+    \maketitle
+\end{frame}
+
+\section{Find the derivative of a function}
+
+\begin{frame}{Difference Quotient}
+    \[ \frac{f(x+h)-f(x)}{h} \]
+\end{frame}
+
+\begin{frame}{Derivative Definition}
+The \alert{derivative} is the limit of the difference quotient as $h$ approaches 0.    \newline\\ \pause
+\[
+f'(x) = \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}
+\]
+\newline\\  \pause
+Other Notations: \quad $\frac{dy}{dx} \qquad y' \qquad \dot{x}$
+\end{frame}
+
+\begin{frame}{Example 1}
+    Find the derivative of each.    \newline\\
+(a) \quad $f(x) = 2x^2 - x + 3$ 
+    \begin{align*}
+        \onslide<2->{f(x+h) &= 2(x+h)^2 - (x+h) + 3} \\[6pt]
+        \onslide<3->{&= 2(x^2 + 2hx + h^2) - x - h + 3} \\[6pt]
+        \onslide<4->{&= 2x^2 + 4hx + 2h^2 - x - h + 3} \\[6pt]
+        \onslide<5->{f(x+h)-f(x) &= 2x^2+4hx+2h^2-x-h+3-(2x^2-x+3)} \\[6pt]
+        \onslide<6->{&= 2x^2+4hx+2h^2-x-h+3 - 2x^2 +x -3} \\[6pt]
+        \onslide<7->{&= 4hx - h + 2h^2} 
+    \end{align*}
+    \end{frame}
+    
+\begin{frame}{Example 1}
+    \begin{align*}
+        \frac{f(x+h)-f(x)}{h} &= \frac{4hx - h +2h^2}{h} \\[10pt]
+        \onslide<2->{&= 4x - 1 + 2h}    \\[10pt]
+        \onslide<3->{&\lim_{h\to 0}(4x - 1 + 2h)} \\[10pt]
+        \onslide<4->{&= 4x - 1 + 2(0)} \\[10pt]
+        \onslide<5->{&= 4x - 1}
+    \end{align*}
+    \onslide<6->{\[\alert{f'(x) = 4x - 1}\]} 
+\end{frame}
+
+\begin{frame}{Example 1}
+(b) \quad $f(x) = -3x^2$   
+\begin{align*}
+    \onslide<2->{f(x+h) &= -3(x+h)^2} \\[6pt]
+    \onslide<3->{&= -3(x^2 + 2hx + h^2)} \\[6pt]
+    \onslide<4->{&= -3x^2 - 6hx - 3h^2} \\[6pt]
+    \onslide<5->{f(x+h)-f(x) &= -3x^2 - 6hx - 3h^2 - (-3x^2)} \\[6pt]
+    \onslide<6->{&= -3x^2 - 6hx - 3h^2 + 3x^2} \\[6pt]
+    \onslide<7->{&= -6hx - 3h^2} 
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1}
+    \begin{align*}
+        \frac{f(x+h)-f(x)}{h} &= \frac{-6hx - 3h^2}{h}  \\[10pt]
+        \onslide<2->{&= -6x - 3h} \\[10pt]
+        \onslide<3->{&\lim_{h\to 0}(-6x-3h)} \\[10pt]
+        \onslide<4->{&= -6x - 3(0)} \\[10pt]
+        \onslide<5->{&= -6x}
+    \end{align*}
+    \onslide<6->{\[ \alert{f'(x) = -6x}\]}
+\end{frame}
+
+\begin{frame}{Example 1}
+(c) \quad $f(x) = 7x + 9$   
+\begin{align*}
+    \onslide<2->{f(x+h) &= 7(x+h)+9} \\[6pt]
+    \onslide<3->{&= 7x + 7h + 9} \\[6pt]
+    \onslide<4->{f(x+h)-f(x) &= 7x + 7h + 9 - (7x + 9)} \\[6pt]
+    \onslide<5->{&= 7x + 7h + 9 - 7x - 9} \\[6pt]
+    \onslide<6->{&= 7h} 
+\end{align*}
+\end{frame}
+
+
+\begin{frame}{Example 1}
+    \begin{align*}
+        \frac{f(x+h)-f(x)}{h} &= \frac{7h}{h}  \\[10pt]
+        \onslide<2->{&= 7} \\[10pt]
+        \onslide<3->{&\lim_{h\to 0}(7)} \\[10pt]
+        \onslide<4->{&= 7} 
+    \end{align*}
+    \onslide<5->{\[ \alert{f'(x) = 7}\]}
+\end{frame}
+
+
+\begin{frame}{Example 1}
+(d) \quad $f(x) = x^2 + 3$   
+\begin{align*}
+    \onslide<2->{f(x+h) &= (x+h)^2 + 3} \\[6pt]
+    \onslide<3->{&= x^2 + 2hx + h^2 + 3} \\[6pt]
+    \onslide<4->{f(x+h)-f(x) &= x^2+2hx+h^2+3-(x^2+3)} \\[6pt]
+    \onslide<5->{&= x^2+2hx+h^2+3-x^2-3} \\[6pt]
+    \onslide<6->{&= 2hx+h^2} 
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1}
+    \begin{align*}
+        \frac{f(x+h)-f(x)}{h} &= \frac{2hx+h^2}{h}  \\[10pt]
+        \onslide<2->{&= 2x+h} \\[10pt]
+        \onslide<3->{&\lim_{h\to 0}(2x+h)} \\[10pt]
+        \onslide<4->{&= 2x + 0} \\[10pt]
+        \onslide<5->{&= 2x} 
+    \end{align*}
+    \onslide<6->{\[ \alert{f'(x) = 2x}\]}
+\end{frame}
+
+\begin{frame}{Aliases}
+    Derivatives have may aliases:   \newline\\  \pause
+    \begin{itemize}
+        \item Instant rate of change.   \newline\\  \pause
+        \item Tangent slope to a curve. \newline\\  \pause
+        \item Limit as secant line becomes tangent line.    
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Fear Not}
+    In calculus, you will learn shortcuts so you won't always have to do what we did in these notes to find the derivative.
+\end{frame}
+
+\end{document}
