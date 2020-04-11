@@ -1,0 +1,244 @@
+\documentclass[t,usenames,dvipsnames]{beamer}
+\usetheme{Copenhagen}
+\setbeamertemplate{headline}{} % remove toc from headers
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{amsmath, tikz, xcolor, array, pgf, pgfplots}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{arrows.meta}
+\everymath{\displaystyle}
+\tikzset{>=stealth}
+
+\title{Transforming Functions}
+\author{}
+\date{}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Objectives}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{Determine vertical and horizontal shifts of the graph of a function.}
+
+\begin{frame}{$f(x) \pm d$}
+For the function $f(x) = \sqrt{x}$, determine the effects on the graph of $g(x) = f(x) \pm d$.   \newline\\  \pause
+
+Vertical shift  \newline\\  \pause
+\begin{itemize}
+    \item<+-> Up $d$ units if $d$ is positive.  \newline\\  
+    \item<+-> Down $d$ units if $d$ is negative.    \newline\\ 
+\end{itemize}
+
+\onslide<5->{Notice the number you are adding or subtracting is \alert{outside the function}.}
+\end{frame}
+
+
+\begin{frame}{Example 1}
+Determine the effect on the graph of $f(x) = \sqrt{x}$ for each.    \newline\\  \pause
+(a) \quad $g(x) = \sqrt{x} + 11$    \newline\\  \pause
+Shift up 11 units \newline\\ \pause
+(b) \quad $g(x) = \sqrt{x} - 15$    \newline\\ \pause
+Shift down 15 units
+\end{frame}
+
+\begin{frame}{$f(x \pm c)$}
+For the function $f(x) = \sqrt{x}$, determine the effects on the graph of $g(x) = f(x \pm c)$ \newline\\  \pause
+
+Horizontal shift    \newline\\  \pause
+\begin{itemize}
+    \item<+-> Right $c$ units for $f(x-c)$ \newline\\
+    \item<+-> Left $c$ units for $f(x+c)$ \newline\\
+\end{itemize}
+
+\onslide<5->{Notice the number you are adding or subtracting is \alert{inside the function}.}
+\end{frame}
+
+\begin{frame}{Example 2}
+Determine the effect on the graph of $f(x) = \sqrt{x}$ for each.    \newline\\  \pause
+(a) \quad $g(x) = \sqrt{x + 11}$ \newline\\ \pause
+Shift left 11 units \newline\\  \pause
+(b) \quad $g(x) = \sqrt{x - 15}$ \newline\\ \pause
+Shift right 15 units
+\end{frame}
+
+
+\section{Determine reflections across axes of the graph of a function.}
+
+\begin{frame}{$-f(x)$}
+    For the function $f(x) = \sqrt{x}$, determine the effects on the graph of $g(x) = -f(x)$  \newline\\  \pause
+    Reflect across $x$-axis
+\end{frame}
+
+\begin{frame}{$f(-x)$}
+    For the function $f(x) = \sqrt{x}$, determine the effects on the graph of $g(x) = f(-x)$  \newline\\  \pause
+    Reflect across $y$-axis
+\end{frame}
+
+\begin{frame}{Example 3}
+Determine the effect on the graph of $f(x) = \sqrt{x}$ for each.    \newline\\
+(a) \quad $g(x)= -\sqrt{x} + 2$ \newline\\ \pause
+\begin{enumerate}
+    \item Reflect across $x$-axis \newline\\    \pause
+    \item Shift up 2 units
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Example 3}
+(b) \quad $g(x) = \sqrt{-x} - 3$ \newline\\ \pause
+\begin{enumerate}
+    \item Reflect across $y$-axis   \newline\\  \pause
+    \item Shift down 3 units
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Example 3}
+(c) \quad $g(x) = 4 - \sqrt{x}$ \newline\\  \pause
+$g(x) = -\sqrt{x} + 4$ \newline\\   \pause
+\begin{enumerate}
+    \item Reflect across $x$-axis \newline\\ \pause
+    \item Shift up 4 units
+\end{enumerate}
+\end{frame}
+
+
+
+\section{Determine vertical and horizontal stretches and compressions of the graph of a function.}
+
+\begin{frame}{$a\cdot f(x)$}
+For $f(x) = \sin x$, determine the effects on the graph of $g(x) = a \cdot f(x)$    \newline\\  \pause
+Vertical stretch if $a > 1$ \newline\\  \pause
+\begin{itemize}
+    \item The factor is $a$ \newline\\ \pause
+    \item The $y$-coordinates are now $a$ times \alert{further away from} the $x$-axis 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{$a\cdot f(x)$}
+For $f(x) = \sin x$, determine the effects on the graph of $g(x) = a \cdot f(x)$    \newline\\  \pause
+Vertical compression if $0 < a < 1$ \newline\\ \pause
+\begin{itemize}
+    \item The factor is \alert{the reciprocal of} $a$ \newline\\ \pause
+    \item The $y$-coordinates are now $a$ times \alert{closer to} the $x$-axis 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example 4}
+Determine the effect on the graph of $f(x) = \sin x$ for each.  \newline\\
+(a) \quad $g(x) = 12\sin x$ \newline\\  \pause
+Vertical stretch by factor of 12 \newline\\ \pause
+(b) \quad $g(x) = \frac{1}{3}\sin x$ \newline\\ \pause
+Vertical compression by factor of 3
+\end{frame}
+
+\begin{frame}{Example 4}
+(c) \quad $g(x) = -80\sin x$ \newline\\ \pause
+\begin{enumerate}
+    \item Reflect across $x$-axis \newline\\ \pause
+    \item Vertical stretch by factor of 80
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Example 4}
+(d) \quad $g(x) = -\frac{2}{3}\sin x$ \newline\\ \pause
+\begin{enumerate}
+    \item Reflect across $x$-axis \newline\\ \pause
+    \item Vertical compression by factor of $\frac{3}{2}$
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{$f(bx)$}
+For $f(x) = \sin x$, determine the effects on the graph of $g(x) = f(bx)$   \newline\\  \pause
+Horizontal compression if $b > 1$ \newline\\ \pause
+\begin{itemize}
+    \item The factor is $b$ \newline\\ \pause
+    \item The $x$-coordinates are now $b$ times \alert{closer to} the $y$-axis
+\end{itemize}
+\end{frame}
+
+\begin{frame}{$f(bx)$}
+For $f(x) = \sin x$, determine the effects on the graph of $g(x) = f(bx)$   \newline\\  \pause
+Horizontal stretch if $0 < b < 1$ \newline\\ \pause
+\begin{itemize}
+    \item The factor is \alert{the reciprocal of} $b$ \newline\\ \pause
+    \item The $x$-coordinates are now $b$ times \alert{further away from} the $y$-axis
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example 5}
+Determine the effect on the graph of $f(x) = \sin x$ for each. \newline\\ \pause
+(a) \quad $g(x) = \sin(12x)$ \newline\\ \pause
+Horizontal compression by factor of 12 \newline\\ \pause
+(b) \quad $g(x) = \sin \left(\frac{1}{5}x\right)$ \newline\\ \pause
+Horizontal stretch by factor of 5
+\end{frame}
+
+\section{Perform multiple transformations of a function.}
+
+\begin{frame}{Example 6}
+Parent function: $f(x) = \sqrt{x}$  \newline\\
+(a) \quad $g(x) = -\sqrt{-x + 1} - 5$ \newline\\  \pause
+\begin{enumerate}
+    \item Shift left 1 unit \newline\\ \pause
+    \item Reflect across $y$-axis \newline\\ \pause
+    \item Reflect across $x$-axis \newline\\  \pause
+    \item Shift down 5 units
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Example 6a Alternate answer}
+\begin{align*}
+    g(x) &= -\sqrt{-x + 1} - 5  \\[10pt]
+    \onslide<2->{g(x) &= -\sqrt{-(x-1)} - 5}
+\end{align*}
+\begin{enumerate}
+    \item<3-> Reflect across $y$-axis   \newline\\
+    \item<4-> Shift right 1 unit    \newline\\
+    \item<5-> Reflect across $x$-axis   \newline\\
+    \item<6-> Shift down 5 units
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Preferred Order for Transformations}
+    \begin{enumerate}
+        \item<2-> Horizontal shifts \\[8pt]
+        \item<3-> Horizontal stretches/compressions and/or $y$-axis reflection \\[8pt]
+        \item<4-> Vertical stretches/compressions and/or $x$-axis reflection \\[8pt]
+        \item<5-> Vertical shifts
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Example 6}
+Parent function: $f(x) = \sqrt{x}$  \newline\\
+(b) \quad $g(x) = 1-\sqrt{\frac{x+3}{2}}$     \pause
+\[g(x) = -\sqrt{\frac{1}{2}x+\frac{3}{2}} + 1\] \pause
+\begin{enumerate}
+    \item Shift left $\frac{3}{2}$ units \pause \\[6pt]
+    \item Horizontal stretch by factor of 2 \pause \\[6pt]
+    \item Reflect across $x$-axis \pause \\[6pt]
+    \item Shift up 1 unit
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Example 7}
+Given parent function $f(x) = x^2$, write the child function $g(x)$ after the following sequence of transformations.    \newline\\
+
+\begin{tabular}{lr}
+    \onslide<2->{1. Shift up 2 units} & \onslide<3->{$g(x) = x^2 + 2$} \\[12pt]
+    \onslide<4->{2. Reflect across $x$-axis} & \onslide<5->{$g(x) = -(x^2+2)$} \\[6pt]
+    & \onslide<6->{$g(x)=-x^2-2$} \\[12pt]
+    \onslide<7->{3. Shift right 1 unit} & \onslide<8->{$g(x) = -(x-1)^2 - 2$} \\[12pt]
+    \onslide<9->{4. Horizontal stretch by factor of 2} & \onslide<10->{$g(x) = -\left(\frac{1}{2}x-1\right)^2-2$}
+\end{tabular}
+\end{frame}
+
+
+\end{document}
