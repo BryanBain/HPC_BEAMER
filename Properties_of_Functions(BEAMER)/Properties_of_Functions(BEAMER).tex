@@ -381,9 +381,9 @@ xticklabels = {$-10$,,$-8$,,$-6$,,$-4$,,$-2$,,0,,2,,4,,6,,8,,10},
 ytick = {-7,-6,...,7},
 yticklabels = {,$-6$,,$-4$,,$-2$,,0,,2,,4,,6}
 ]
-\addplot[<-, color=blue, very thick, domain=-9:-2, samples=200,smooth] {sin(deg(x-1))+2};
+\addplot[color=blue, very thick, domain=-9:-2, samples=200,smooth] {sin(deg(x-1))+2};
 \addplot[color=red, very thick, domain=-2:3, samples=200,smooth] {x^2-3};
-\addplot[->, color=violet, very thick, domain=3:4.5, samples=200, smooth] {-8*x+30};
+\addplot[color=violet, very thick, domain=3:4.5, samples=200, smooth] {-8*x+30};
 \draw[color=blue,fill=white] (axis cs:-2,1.9) circle [radius=2pt];
 \draw[fill=red,color=red] (axis cs:-2,1) circle [radius=2pt];
 \end{axis}
