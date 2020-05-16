@@ -1,0 +1,292 @@
+\documentclass[t,usenames,dvipsnames]{beamer}
+\usetheme{Copenhagen}
+\setbeamertemplate{headline}{} % remove toc from headers
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{amsmath, tkz-euclide, tikz, xcolor, pgfplots, array}
+\usetkzobj{all}
+\pgfplotsset{compat = 1.16}
+\usetikzlibrary{arrows.meta, calc, decorations.pathreplacing}
+\pgfplotsset{every axis/.append style = {axis lines = middle, axis line style = {<->}}}
+\pgfplotsset{every tick label/.append style={font=\scriptsize}}
+\everymath{\displaystyle}
+
+\title{Trig Identities}
+\author{}
+\date{}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Objectives}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\begin{frame}
+    \maketitle
+\end{frame}
+
+\section{Derive the Pythagorean identities}
+
+\begin{frame}{Pythagorean Identities}
+    These are some of the most important identities in this course. \newline\\
+    
+    They are based on the Pythagorean Theorem.
+\end{frame}
+
+\begin{frame}{Example 1}
+Verify $\cos^2\theta + \sin^2\theta = 1$    \\[12pt]
+\begin{minipage}{0.3\textwidth}
+\begin{tikzpicture}
+\tkzDefPoints{0/0/A, 3/0/B, 3/2/C}
+\tkzMarkRightAngle(C,B,A)
+\tkzDrawPolygon(A,B,C)
+\tkzLabelAngle[pos = 0.75](B,A,C){$\theta$}
+\tkzLabelSegment[below](A,B){$x$}
+\tkzLabelSegment[right](B,C){$y$}
+\tkzLabelSegment[above](A,C){$r$}
+\end{tikzpicture}
+\end{minipage}
+\hspace{0.25cm}
+\begin{minipage}{0.5\textwidth}
+\begin{align*}
+\onslide<2->{x^2 + y^2 &= r^2} \\[12pt]
+\onslide<3->{\frac{x^2}{r^2} + \frac{y^2}{r^2} &= \frac{r^2}{r^2}} \\[12pt]
+\onslide<4->{\left(\frac{x}{r}\right)^2 + \left(\frac{y}{r}\right)^2 &= 1} \\[12pt]
+\onslide<5->{(\cos\theta)^2 + (\sin\theta)^2 &= 1} \\[12pt]
+\onslide<6->{\cos^2\theta + \sin^2\theta &= 1}
+\end{align*}
+\end{minipage}
+\end{frame}
+
+\begin{frame}{Example 2}
+Verify $1 + \tan^2\theta = \sec^2\theta$    \\[12pt]
+\begin{minipage}{0.3\textwidth}
+\begin{tikzpicture}
+\tkzDefPoints{0/0/A, 3/0/B, 3/2/C}
+\tkzMarkRightAngle(C,B,A)
+\tkzDrawPolygon(A,B,C)
+\tkzLabelAngle[pos = 0.75](B,A,C){$\theta$}
+\tkzLabelSegment[below](A,B){$x$}
+\tkzLabelSegment[right](B,C){$y$}
+\tkzLabelSegment[above](A,C){$r$}
+\end{tikzpicture}
+\end{minipage}
+\hspace{0.25cm}
+\begin{minipage}{0.5\textwidth}
+\begin{align*}
+\onslide<2->{x^2 + y^2 &= r^2} \\[12pt]
+\onslide<3->{\frac{x^2}{x^2} + \frac{y^2}{x^2} &= \frac{r^2}{x^2}} \\[12pt]
+\onslide<4->{1 + \left(\frac{y}{x}\right)^2 &= \left(\frac{r}{x}\right)^2} \\[12pt]
+\onslide<5->{1 + (\tan\theta)^2 &= (\sec\theta)^2} \\[12pt]
+\onslide<6->{1 + \tan^2\theta &= \sec^2\theta}
+\end{align*}
+\end{minipage}
+\end{frame}
+
+\begin{frame}{Example 3}
+Verify $\cot^2\theta + 1  = \csc^2\theta$    \\[12pt]
+\begin{minipage}{0.3\textwidth}
+\begin{tikzpicture}
+\tkzDefPoints{0/0/A, 3/0/B, 3/2/C}
+\tkzMarkRightAngle(C,B,A)
+\tkzDrawPolygon(A,B,C)
+\tkzLabelAngle[pos = 0.75](B,A,C){$\theta$}
+\tkzLabelSegment[below](A,B){$x$}
+\tkzLabelSegment[right](B,C){$y$}
+\tkzLabelSegment[above](A,C){$r$}
+\end{tikzpicture}
+\end{minipage}
+\hspace{0.25cm}
+\begin{minipage}{0.5\textwidth}
+\begin{align*}
+\onslide<2->{x^2 + y^2 &= r^2} \\[12pt]
+\onslide<3->{\frac{x^2}{y^2} + \frac{y^2}{y^2} &= \frac{r^2}{y^2}} \\[12pt]
+\onslide<4->{\left(\frac{x}{y}\right)^2 + 1 &= \left(\frac{r}{y}\right)^2} \\[12pt]
+\onslide<5->{(\cot\theta)^2 + 1 &= (\csc\theta)^2} \\[12pt]
+\onslide<6->{\cot^2\theta + 1 &= \csc^2\theta}
+\end{align*}
+\end{minipage}
+\end{frame}
+
+\begin{frame}{Alternate Forms of Pythagorean Identities}
+    \[
+    \cos^2\theta + \sin^2\theta = 1
+    \]
+    \pause
+    \begin{itemize}
+        \item $1 - \sin^2\theta = \cos^2\theta$ \newline\\  \pause
+        \begin{itemize}
+            \item $(1-\sin\theta)(1+\sin\theta) = \cos^2\theta$ \newline\\  \pause
+        \end{itemize}
+        \item $1 - \cos^2\theta = \sin^2\theta$ \newline\\  \pause
+        \begin{itemize}
+            \item $(1+\cos\theta)(1-\cos\theta) = \sin^2\theta$
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Alternate Forms of Pythagorean Identities}
+    \[
+    1 + \tan^2\theta = \sec^2\theta
+    \]
+    \pause
+    \begin{itemize}
+        \item $\sec^2\theta - 1 = \tan^2\theta$ \newline\\  \pause
+        \begin{itemize}
+            \item $(\sec\theta + 1)(\sec\theta - 1)$ \newline\\  \pause
+        \end{itemize}
+        \item $1 = \sec^2\theta - \tan^2\theta$ \newline\\  \pause
+        \begin{itemize}
+            \item $1 = (\sec\theta + \tan\theta)(\sec\theta - \tan\theta)$
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Alternate Forms of Pythagorean Identities}
+    \[
+    1 + \cot^2\theta = \csc^2\theta
+    \]
+    \pause
+    \begin{itemize}
+        \item $\csc^2\theta - \cot^2\theta = 1$ \newline\\  \pause
+        \begin{itemize}
+            \item $(\csc\theta + \cot\theta)(\csc\theta - \cot\theta) = 1$ \newline\\  \pause
+        \end{itemize}
+        \item $\csc^2 \theta - 1 = \cot^2\theta$ \newline\\  \pause
+        \begin{itemize}
+            \item $(\csc\theta + 1)(\csc\theta - 1) = \cot^2\theta$
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+\section{Derive the quotient identities}
+
+\begin{frame}{Quotient Identities}
+    The Quotient Identities are
+    \[
+    \tan \theta = \frac{\sin\theta}{\cos\theta} \quad \text{ and } \quad \cot\theta = \frac{\cos\theta}{\sin\theta}
+    \]
+\end{frame}
+
+\begin{frame}{Example 4}
+Use the triangle to verify $\tan\theta = \frac{\sin\theta}{\cos\theta}$ \\[18pt]
+\begin{minipage}{0.3\textwidth}
+\begin{tikzpicture}
+\tkzDefPoints{0/0/A, 3/0/B, 3/2/C}
+\tkzMarkRightAngle(C,B,A)
+\tkzDrawPolygon(A,B,C)
+\tkzLabelAngle[pos = 0.75](B,A,C){$\theta$}
+\tkzLabelSegment[below](A,B){$x$}
+\tkzLabelSegment[right](B,C){$y$}
+\tkzLabelSegment[above](A,C){$r$}
+\end{tikzpicture}
+\end{minipage}
+\hspace{0.25cm}
+\begin{minipage}{0.5\textwidth}
+\begin{align*}
+\onslide<2->{\frac{\sin\theta}{\cos\theta} &= \dfrac{\left(\dfrac{y}{r}\right)} {\left(\dfrac{x}{r}\right)} } 
+\onslide<3->{{\color{blue}\left(\dfrac{r}{r}\right)}} \\[12pt]
+\onslide<4->{&=\dfrac{y}{x}} \\[12pt]
+\onslide<5->{&=\tan\theta}
+\end{align*}
+\end{minipage}
+\end{frame}
+
+
+\section{Use the sum and difference identities to verify other identities}
+
+\begin{frame}{Additional Angle Sum and Difference Identities}
+\begin{align*}
+	\cos(A - B) &= \cos A \cos B + \sin A \sin B \\[6pt]
+    \cos(A + B) &= \cos A \cos B - \sin A \sin B    \\[6pt]
+    \sin(A - B) &= \sin A \cos B - \sin B \cos A    \\[6pt]
+    \sin(A + B) &= \sin A \cos B + \sin B \cos A    \\[6pt]
+    \tan(A - B) &= \dfrac{\tan A - \tan B}{1 + \tan A \tan B} \\[8pt]
+    \tan(A + B) &= \dfrac{\tan A + \tan B}{1 - \tan A \tan B}   \\[8pt]
+    **\text{Note: } \tan(A\pm B) &= \dfrac{\sin(A \pm B)}{\cos(A \pm B)}
+\end{align*}    
+\end{frame}
+
+\begin{frame}{Example 5}
+    Verify $\cos\left(\dfrac{\pi}{2} - \theta\right) = \sin\theta$
+    \begin{align*}
+        \onslide<2->{\cos\left(\dfrac{\pi}{2} - \theta\right) &= \cos\dfrac{\pi}{2}\cdot \cos\theta + \sin\dfrac{\pi}{2}\cdot \sin\theta} \\[8pt]
+        \onslide<3->{&=0\cos\theta + 1\sin\theta} \\[6pt]
+        \onslide<4->{&= \sin\theta}
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Example 6}
+    Verify $\cos(-\theta) = \cos\theta$ 
+    \begin{align*}
+        \onslide<2->{\cos(-\theta) &= \cos(0 - \theta)} \\[6pt]
+        \onslide<3->{&= \cos0\cdot \cos\theta + \sin0 \cdot \sin\theta} \\[6pt]
+        \onslide<4->{&= 1\cos\theta + 0\sin\theta} \\[6pt]
+        \onslide<5->{&= \cos\theta}
+    \end{align*}
+\end{frame}
+
+\section{Derive double-angle identities}
+
+\begin{frame}{Double-Angle Identities}
+The double-angle identities are an extension of the \alert{angle sum identities}. \newline\\
+
+In this case, the angles would be \underline{equal}.    \pause
+
+\begin{align*}
+    \onslide<2->{\sin(2A) &= \sin(A + A)} \\[6pt]
+    \onslide<3->{&= \sin A \cdot \cos A + \sin A \cdot \cos A} \\[6pt]
+    \onslide<4->{&= 2\sin A \cos A}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Double-Angle Identities}
+    \begin{align*}
+        \sin(2A) &= 2\sin A \cos A  \\[10pt]
+        \cos(2A) &= \cos^2 A - \sin^2 A \\[10pt]
+        \tan(2A) &= \frac{2\tan A}{1 - \tan^2 A}
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Alternate Forms of $\cos (2A)$}
+    $\cos (2A)$ has two alternate forms.    \newline\\
+    
+    Alternate form \# 1:    
+    \begin{align*}
+        \onslide<2->{\cos(2A) &= {\color{red}\cos^2 A} - \sin^2 A} \\[10pt]
+        \onslide<3->{&= {\color{red}1 - \sin^2 A} - \sin^2 A} \\[10pt]
+        \onslide<4->{&= 1 - 2\sin^2 A}
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Alternate Forms of $\cos (2A)$}
+    Alternate form \# 2:
+    \begin{align*}
+        \onslide<2->{\cos(2A) &= \cos^2 A - {\color{red}\sin^2 A}} \\[10pt]
+        \onslide<3->{&= \cos^2 A - ({\color{red}1-\cos^2 A})} \\[10pt]
+        \onslide<4->{&= \cos^2 A - 1 + \cos^2 A} \\[10pt]
+        \onslide<5->{&= 2\cos^2 A - 1}
+    \end{align*}
+\end{frame}
+
+\section{Derive power-reducing identities}
+
+\begin{frame}{Power-Reduction Identities}
+    The power-reduction identities can be derived from the alternate equations for $\cos(2A)$.   \newline\\  \pause
+    
+    For $\cos(2A) = 2\cos^2A - 1$, if we solve for $\cos^2 A$, we get
+    \[
+    \cos^2 A = \frac{1+\cos(2A)}{2}
+    \]
+    \pause
+    And for $\cos(2A) = 1 - 2\sin^2 A$, solving for $\cos^2 A$ gives us
+    \[
+    \sin^2 A = \frac{1-\cos(2A)}{2}
+    \]
+\end{frame}
+\end{document}
