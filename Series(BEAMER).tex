@@ -1,0 +1,429 @@
+\documentclass[t,usenames,dvipsnames]{beamer}
+\usetheme{Copenhagen}
+\setbeamertemplate{headline}{} % remove toc from headers
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{amsmath, xcolor, tikz, pgfplots, array, cancel}
+
+\pgfplotsset{compat = newest}
+\usetikzlibrary{arrows.meta, calc, decorations.pathreplacing}
+\pgfplotsset{every axis/.append style = {axis lines = middle}}
+\pgfplotsset{every tick label/.append style={font=\scriptsize}}
+\everymath{\displaystyle}
+
+\title{Series}
+\author{}
+\date{}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Objectives}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\begin{frame}
+    \maketitle
+\end{frame}
+
+\section{Expand the terms of a series}
+
+\begin{frame}{Series}
+A \alert{series} is a sequence in which we add the terms.	\newline\\  \pause
+
+Series are written using the explicit rule for a sequence with the Greek letter sigma $\Sigma$ indicating the terms of the sequence are to be added.	\newline\\
+\end{frame}
+
+\begin{frame}{General Form}
+The general form of a series is given below:
+\[
+\sum_{i=1}^{n} a_i = a_1 + a_2 + a_3 + \cdots + a_n
+\]
+
+where 
+\begin{itemize}
+	\item $i$ is the \textbf{index of summation}
+	\item 1 is the \textbf{lower limit of summation}
+	\item $n$ is the \textbf{upper limit of summation}
+\end{itemize}
+\bigskip  \pause
+
+When you write out the terms of the series to add, that is called \alert{expanding the series}.
+\end{frame}
+
+\begin{frame}{Example 1}
+Expand each of the following. Then find the sum.    \newline\\  
+(a) \quad $\sum_{k=1}^{4} \dfrac{2}{3^k}$   
+
+\begin{minipage}{0.6\textwidth}
+\begin{align*}
+    \onslide<2->{k &= 1: \quad \frac{2}{3}} \\[8pt]
+    \onslide<3->{k &= 2: \quad \frac{2}{9}} \\[8pt]
+    \onslide<4->{k &= 3: \quad \frac{2}{27}} \\[8pt]
+    \onslide<5->{k &= 4: \quad \frac{2}{81}}
+\end{align*}
+\end{minipage}
+\begin{minipage}{0.2\textwidth}
+\onslide<6->{Sum: }
+\onslide<7->{$\frac{80}{81}$}
+\end{minipage}
+\end{frame}
+
+\begin{frame}{Example 1}
+(b) \quad $\sum_{n=0}^{3} \frac{n!}{2}$ \newline\\
+\begin{minipage}{0.6\textwidth}
+\begin{align*}
+    \onslide<2->{n = 0: \quad \frac{1}{2}} \\[8pt]
+    \onslide<3->{n = 1: \quad \frac{1}{2}} \\[8pt]
+    \onslide<4->{n = 2: \quad   1}  \\[8pt]
+    \onslide<5->{n = 3: \quad   3}
+\end{align*}
+\end{minipage}
+\begin{minipage}{0.2\textwidth}
+\onslide<6->{Sum: }
+\onslide<7->{5}
+\end{minipage}
+\end{frame}
+
+\begin{frame}{Example 1}
+(c) \quad $\sum_{n=0}^{3} \dfrac{x^n}{n!}$  \newline\\
+\begin{minipage}{0.6\textwidth}
+\begin{align*}
+    \onslide<2->{n = 0: \quad 1} \\[8pt]
+    \onslide<3->{n = 1: \quad x} \\[8pt]
+    \onslide<4->{n = 2: \quad \frac{x^2}{2}}  \\[8pt]
+    \onslide<5->{n = 3: \quad \frac{x^3}{6}}
+\end{align*}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\onslide<6->{Sum: } \newline\\
+\onslide<7->{$1+x+\frac{x^2}{2}+\frac{x^3}{6}$}
+\end{minipage}
+\end{frame}
+
+\section{Write a series using sigma notation}
+
+\begin{frame}{Writing in Sigma Notation}
+It can be time-consuming to add a lot of terms of a series. One strategy is to find the sequence rule for the given series and evaluate it in a calculator.
+\end{frame}
+
+\begin{frame}{Example 2}
+Express each sum in sigma notation. Then evaluate. Round to 4 decimal places.  \newline\\
+(a) \quad $1 + 3 + 5 + \cdots + 987$    \newline\\
+\onslide<2->{Arithmetic sequence: 1, 3, 5, 7, ..., 987} 
+\onslide<3->{\[a_n = 2n - 1\]}
+\onslide<4->{Lower limit: }
+\begin{align*}
+    \onslide<5->{2n - 1 &= 1} \\
+    \onslide<6->{n &= 1}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 2}
+Upper limit:
+\begin{align*}
+    \onslide<2->{2n-1 &= 987} \\
+    \onslide<3->{n &= 494}
+\end{align*}
+\onslide<4->{\[\sum_{n=1}^{494}\left(2n-1\right) \onslide<5->{= 244,036}\]}
+\end{frame}
+
+\begin{frame}{Example 2}
+(b) \quad $3 + 9 + 27 + \cdots + 387,420,489$   \newline\\
+\onslide<2->{Geometric sequence: 3, 9, 27, 81, ..., 387,420,489}
+\onslide<3->{\[a_n = 3^n\]}
+\onslide<4->{Lower limit:}
+\begin{align*}
+    \onslide<5->{3^n &= 3} \\[6pt]
+    \onslide<6->{n &= 1}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 2}
+Upper limit:
+\begin{align*}
+    \onslide<2->{3^n &= 387,420,489} \\[6pt]
+    \onslide<3->{n\cdot \log_3(3) &= \log_3(387,420,489)} \\[6pt]
+    \onslide<4->{n &= 18}
+\end{align*}
+\onslide<5->{\[\sum_{n=1}^{18}3^n \onslide<6->{= 581,130,732}\]}
+\end{frame}
+
+\begin{frame}{Example 2}
+(c) \quad   $1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + \cdots + \frac{1}{117}$   \newline\\
+    \onslide<2->{\[\frac{1}{1} - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + \cdots + \frac{1}{117}\]}   \newline\\
+    \onslide<3->{\[\text{Rule:\quad} \frac{(-1)^{n+1}}{n}\]}    \newline\\
+    \begin{center}
+    \onslide<4->{Lower Limit: $n=1$} \quad \onslide<5->{Upper Limit: $n = 117$}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Example 2}
+    \[ \sum_{n=1}^{117} \frac{(-1)^{n+1}}{n} 
+    \onslide<2->{\approx 0.6974 }
+    \]
+\end{frame}
+
+\section{Work with arithmetic series}
+
+\begin{frame}{Arithmetic Series}
+An arithmetic series can be found by adding the terms of the arithmetic sequence.  
+\end{frame}
+
+\begin{frame}[shrink=5]{Example 3}
+Without using a calculator, find the sum of the first 100 natural numbers.  
+\onslide<2->{\[S = 1 + 2 + 3 + \cdots + 98 + 99 + 100\]}
+\begin{tabular}{cccccccccccccc}
+\onslide<3->{  & 1 & + & 2 & + & 3 & + & $\cdots$ & + & 98 & + & 99 & + & 100} \\
+\onslide<4->{+ & 100 & + & 99  & + & 98  & + & $\cdots$ & + & 3 & + & 2 & + & 1   \\ \hline}
+\onslide<5->{& 101 & + & 101 & + & 101 & + & $\cdots$ & + & 101 & + & 101 & + & 101} \\
+\end{tabular}
+\begin{align*}
+    \onslide<6->{2S &= 100(101)}    \\[8pt]
+    \onslide<7->{S &= 50(101)} 
+    \onslide<8->{= 5,050}
+\end{align*}
+\end{frame}
+
+\begin{frame}{General Formula for Arithmetic Series}
+
+The method of solving the example above suggests that to find the sum of an arithmetic series, add the first and last terms then multiply that sum by half the number of terms:    \newline\\    \pause
+\[
+S_n = \frac{n}{2}\left(a_1 + a_n\right)
+\]
+\newline\\  \pause
+In the next example, you will need to find the number of terms, $n$, that are being added. \newline\\    
+\end{frame}
+
+\begin{frame}{Example 4}
+Find the value of $n$ in each.  \newline\\  
+(a) \quad $\sum_{i=1}^{n}(5i-9) = 1,400$    \\[8pt]
+\onslide<2->{First term:}
+\onslide<3->{\[5(1)-9=-4\]}
+\onslide<4->{Last term:}
+\onslide<5->{\[5n-9\]}
+\end{frame}
+
+\begin{frame}{Example 4}
+\begin{align*}
+    1400 &= \frac{n}{2}\left(-4 + 5n - 9\right) \\[8pt]
+    \onslide<2->{1400 &= \frac{n}{2}\left(5n-13\right)} \\[8pt]
+    \onslide<3->{1400 &= 2.5n^2 - 6.5n} \\[6pt]
+    \onslide<4->{0 &= 2.5n^2 - 6.5n - 1400} \\[6pt]
+    \onslide<5->{n &= -22.4, \, 25}
+\end{align*}    
+\onslide<6->{\[n = 25\]}
+\end{frame}
+
+\begin{frame}{Example 4}
+Find the value of $n$ in each.  \newline\\  
+(b) \quad $\sum_{i=1}^{n}(6i-11) = 2,460$    \\[8pt]
+\onslide<2->{First term:}
+\onslide<3->{\[6(1)-11=-5\]}
+\onslide<4->{Last term:}
+\onslide<5->{\[6n-11\]}
+\end{frame}
+
+\begin{frame}{Example 4}
+\begin{align*}
+    2460 &= \frac{n}{2}\left(-5 + 6n - 11\right) \\[8pt]
+    \onslide<2->{2460 &= \frac{n}{2}\left(6n-16\right)} \\[8pt]
+    \onslide<3->{2460 &= 3n^2 - 8n} \\[6pt]
+    \onslide<4->{0 &= 3n^2 - 8n - 2460} \\[6pt]
+    \onslide<5->{n &= -27.\bar{3}, \, 30}
+\end{align*}    
+\onslide<6->{\[n = 30\]}
+\end{frame}
+
+
+
+
+\begin{frame}{Example 4}
+Find the value of $n$ in each.  \newline\\  
+(c) \quad $\sum_{i=0}^{n}(1-2i) = -399$ \quad **Be careful with this one   \\[8pt]
+\onslide<2->{First term:}
+\onslide<3->{\[1-2(0)=1\]}
+\onslide<4->{Last term:}
+\onslide<5->{\[1-2n\]}
+\end{frame}
+
+\begin{frame}{Example 4}
+\begin{align*}
+    -399 &= \frac{n+1}{2}\left(1 + 1 - 2n\right) \\[8pt]
+    \onslide<2->{-399 &= \frac{n+1}{2}\left(2-2n\right)} \\[8pt]
+    \onslide<3->{-399 &= (n+1)(1-n)} \\[6pt]
+    \onslide<4->{-399 &= -n^2+1} \\[6pt]
+    \onslide<5->{-400 &= -n^2} \\[6pt]
+    \onslide<6->{400 &= n^2} \quad \onslide<7->{\longrightarrow n = -20, \, 20}
+\end{align*}    
+\onslide<8->{\[n = 20\]}
+\end{frame}
+
+\section{Find the sum of a finite geometric series}
+
+\begin{frame}{Geometric Series}
+The sum, $S_n$, of the first $n$ terms of a geometric sequence is given by  \newline\\ 
+\[
+S_n = \frac{\text{(first term)}(1-r^n)}{1-r}
+\]
+\end{frame}
+
+\begin{frame}{Example 5}
+(a) \quad $0.5+2.5+12.5+\cdots+39062.5$ \newline\\
+\onslide<2->{Common Ratio: } \onslide<3->{$2.5/0.5 = 5$} \newline\\
+\onslide<4->{$y$-intercept: $0.5/5 = 0.1$} \newline\\
+\onslide<5->{Rule: 
+\[ 0.1(5)^n  \]
+}
+\end{frame}
+
+\begin{frame}{Example 5}
+Solving for $n$:
+\begin{align*}
+    \onslide<2->{0.1(5)^n &= 39062.5} \\[8pt]
+    \onslide<3->{5^n &= 390,625}  \\[8pt]
+    \onslide<4->{n &= \log_5(390,625)} \\[8pt]
+    \onslide<5->{n &= 8}
+\end{align*}
+\onslide<6->{\[\sum_{i=1}^{8} 0.1(5)^i \onslide<7->{= 48,828}\]}
+\end{frame}
+
+\begin{frame}{Example 5}
+Write each in sigma notation and find the sum.  \newline\\
+(b) \quad $2+(-8)+32+(-128)+\cdots+33,554,432$  \newline\\
+\onslide<2->{Common Ratio: } \onslide<3->{$-8/2 = -4$} \newline\\
+\onslide<4->{$y$-intercept: $-1/2$} \newline\\
+\onslide<5->{Rule: 
+\[ -\frac{1}{2}\left(-4\right)^n  \]
+}
+\end{frame}
+
+\begin{frame}{Example 5}
+Solving for $n$:
+\begin{align*}
+    \onslide<2->{-\frac{1}{2}\left(-4\right)^n &= 33,554,432} \\[8pt]
+    \onslide<3->{(-4)^n &= -67,108,864}  \\[8pt]
+    \onslide<4->{n &= \log_4(67,108,864)} \\[8pt]
+    \onslide<5->{n &= 13}
+\end{align*}
+\onslide<6->{\[\sum_{i=1}^{13} \left(-\frac{1}{2}\right)(-4)^i \onslide<7->{= 26,843,546}\]}
+\end{frame}
+
+\section{Find the sum of an infinite geometric series}
+
+\begin{frame}{Formula Issues}
+    The formula \newline\\
+\[
+S_n = \frac{a_1(1-r^n)}{1-r}
+\]
+\newline\\
+works for a finite, or limited, number of terms.   \newline\\
+
+But what happens if we add up an unlimited, or infinite, number of terms? 
+\end{frame}
+
+\begin{frame}{Infinite Series Formula}
+We are able to find a sum on the condition that $|r| < 1$, or to put it another way, $-1 < r < 1$.  \newline\\  \pause
+
+
+The sum of the infinite geometric series becomes 
+\[
+S_\infty = \frac{\text{first term}}{1-r}
+\]
+\newline\\  \pause
+
+An infinite series that has a sum that can be found is said to \alert{converge}. \newline\\   \pause
+
+A series that does not converge is said to \alert{diverge}. 
+\end{frame}
+
+\begin{frame}{Example 6}
+Find the sum of each infinite series    \newline\\  
+(a) \quad $\frac{3}{8}-\frac{3}{16}+\frac{3}{32}-\frac{3}{64}+\cdots$   \newline\\
+\onslide<2->{Common ratio:} \newline\\
+\onslide<3->{\[\frac{\tfrac{-3}{16}}{\tfrac{3}{8}} \onslide<4->{= -\frac{1}{2}}\]}    \newline\\
+\onslide<4->{\[-1 < -\frac{1}{2} < 1\]}
+\end{frame}
+
+\begin{frame}{Example 6}
+\begin{align*}
+    S_\infty &= \frac{\text{first term}}{1-r}   \\[12pt]
+    \onslide<2->{&= \frac{3/8}{1-(-1/2)}}   \\[12pt]
+    \onslide<3->{&= \frac{1}{4}}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 6}
+Find the sum of each infinite series    \newline\\  
+(b) \quad $3+2+\dfrac{4}{3}+\dfrac{8}{9}+\cdots$   \newline\\
+\onslide<2->{Common ratio:} \newline\\
+\onslide<3->{\[\frac{2}{3}\]}    \newline\\
+\onslide<4->{\[-1 < \frac{2}{3} < 1\]}
+\end{frame}
+
+\begin{frame}{Example 6}
+\begin{align*}
+    S_\infty &= \frac{\text{first term}}{1-r}   \\[12pt]
+    \onslide<2->{&= \frac{3}{1-(2/3)}}   \\[12pt]
+    \onslide<3->{&= 9}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 6}
+(c) \quad $\sum_{i=1}^{\infty} -3.6(0.6)^{i-1}$ \newline\\
+\onslide<2->{Common Ratio:}
+\onslide<3->{\[0.6\]}   
+\onslide<4->{\[-1 < 0.6 < 1\]}
+\onslide<5->{First Term:}
+\onslide<6->{\[-3.6(0.6)^{1-1} \onslide<7->{=-3.6}\]}
+\end{frame}
+
+\begin{frame}{Example 6}
+\begin{align*}
+    S_\infty &= \frac{\text{first term}}{1-r}   \\[12pt]
+    \onslide<2->{&= \frac{-3.6}{1-0.6}} \\[12pt]
+    \onslide<3->{&= -9}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 6}
+(d) \quad   $\sum_{n=1}^{\infty} 2\left(\frac{1}{3}\right)^{n-1}$   \newline\\
+\onslide<2->{Common Ratio:}
+\onslide<3->{\[\frac{1}{3}\]}   
+\onslide<4->{\[-1 < \frac{1}{3} < 1\]}
+\onslide<5->{First Term:}
+\onslide<6->{\[2\left(\frac{1}{3}\right)^{1-1} \onslide<7->{=2}\]}
+\end{frame}
+
+\begin{frame}{Example 6}
+\begin{align*}
+    S_\infty &= \frac{\text{first term}}{1-r}   \\[12pt]
+    \onslide<2->{&= \frac{2}{1-(1/3)}} \\[12pt]
+    \onslide<3->{&= 3}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 6}
+(e) \quad $\sum_{i=1}^{\infty}\left(\frac{4}{3}\right)^{i}$ \newline\\
+\onslide<2->{Common Ratio:}
+\onslide<3->{\[\frac{4}{3}\]}   \newline\\
+\onslide<4->{\[\frac{4}{3} > 1\]}   \newline\\
+\begin{center}
+\onslide<5->{Diverges}
+\end{center}
+\end{frame}
+
+\begin{frame}{Example 6}
+(f) \quad $\sum_{i=1}^{\infty} 0.1(-2.5)^i$  \newline\\
+\onslide<2->{Common Ratio:}
+\onslide<3->{\[-2.5\]}   \newline\\
+\onslide<4->{\[-2.5 < -1\]}   \newline\\
+\begin{center}
+\onslide<5->{Diverges}
+\end{center}
+\end{frame}
+
+\end{document}

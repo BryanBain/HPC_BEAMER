@@ -1,0 +1,248 @@
+\documentclass[t,usenames,dvipsnames]{beamer}
+\usetheme{Copenhagen}
+\setbeamertemplate{headline}{} % remove toc from headers
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{amsmath, tikz, xcolor, array, pgf, pgfplots, tkz-graph}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{arrows.meta}
+\everymath{\displaystyle}
+\tikzset{>=stealth}
+\tikzstyle{input} = [circle, text centered, radius = 1cm, draw = black]
+\tikzstyle{function} = [rectangle, text centered, minimum width = 2cm, minimum height = 1cm, draw = black]
+
+\title{Function Operations}
+\author{}
+\date{}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Objectives}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{Perform arithmetic operations to functions}
+
+\begin{frame}{Notation}
+We can add, subtract, multiply, and divide functions much like we can with real numbers: \newline\\
+
+\begin{itemize}
+    \item \onslide<2->{$(f+g)(x)=f(x)+g(x)$}    \newline\\
+    \begin{itemize}
+        \item \onslide<3->{add corresponding $y$-coordinates}    \newline\\
+    \end{itemize}
+    \item \onslide<4->{$(f-g)(x)=f(x)-g(x)$}\newline\\
+    \begin{itemize}
+        \item \onslide<5->{subtract corresponding $y$-coordinates}
+    \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Notation}
+\begin{itemize}
+    \item $(fg)(x)=f(x)\cdot g(x)$    \newline\\
+    \begin{itemize}
+        \item \onslide<2->{multiply corresponding $y$-coordinates}    \newline\\
+    \end{itemize}
+    \item \onslide<3->{$\left(\frac{f}{g}\right)(x) = \frac{f(x)}{g(x)}, \quad g(x) \neq 0$}    \newline\\
+    \begin{itemize}
+        \item \onslide<4->{divide corresponding $y$-coordinates}
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example 1}
+For $f(x) = 6x^2 - 2x$ and $g(x) = 3 - \frac{1}{x}$   \newline\\
+(a) \quad Simplify $(f+g)(x)$
+\begin{align*}
+    \onslide<2->{(f+g)(x) &= f(x) + g(x)} \\[12pt]
+    \onslide<3->{&= 6x^2-2x + 3 -\frac{1}{x}}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1 \quad $f(x) = 6x^2 - 2x$ and $g(x) = 3 - \frac{1}{x}$}
+(b) \quad Evaluate $(f + g)(-1)$ 
+\begin{align*}
+    \onslide<2->{(f+g)(-1) &= f(-1) + g(-1)} \\[12pt]
+    \onslide<3->{&= 8 + 4} \\[10pt]
+    \onslide<4->{&= 12}
+\end{align*}
+\begin{align*}
+    \onslide<5->{(f+g)(-1) &= 6(-1)^2 - 2(-1) + 3 - \left(\frac{1}{-1}\right)} \\[8pt]
+    \onslide<6->{&= 12}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1 \quad $f(x) = 6x^2 - 2x$ and $g(x) = 3 - \frac{1}{x}$}
+(c) \quad Simplify $(f-g)(x)$
+\begin{align*}
+    \onslide<2->{(f-g)(x) &= f(x) - g(x)} \\[12pt]
+    \onslide<3->{&= (6x^2-2x) - \left(3 -\frac{1}{x}\right)} \\[12pt]
+    \onslide<4->{&= 6x^2-2x - 3 + \frac{1}{x}}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1 \quad $f(x) = 6x^2 - 2x$ and $g(x) = 3 - \frac{1}{x}$}
+(d) \quad Simplify $(g-f)(x)$
+\begin{align*}
+    \onslide<2->{(g-f)(x) &= g(x) - f(x)} \\[12pt]
+    \onslide<3->{&= 3 -\frac{1}{x} - (6x^2 - 2x)} \\[12pt]
+    \onslide<4->{&= 3 -\frac{1}{x} - 6x^2 + 2x}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1 \quad $f(x) = 6x^2 - 2x$ and $g(x) = 3 - \frac{1}{x}$}
+(e) \quad Simplify $(fg)(x)$
+\begin{align*}
+    \onslide<2->{(fg)(x) &= f(x) \cdot g(x)} \\[12pt]
+    \onslide<3->{&= \left(6x^2-2x\right)\left(3-\frac{1}{x}\right)} \\[12pt]
+    \onslide<4->{&= 18x^2 - 6x - 6x + 2} \\[10pt]
+    \onslide<5->{&= 18x^2 - 12x + 2}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1 \quad $f(x) = 6x^2 - 2x$ and $g(x) = 3 - \frac{1}{x}$}
+(f) \quad Simplify $\left(\frac{f}{g}\right)(x)$
+\begin{align*}
+    \onslide<2->{\left(\frac{f}{g}\right)(x) &= \frac{f(x)}{g(x)}} \\[12pt]
+    \onslide<3->{&= \frac{6x^2-2x}{3-\frac{1}{x}}}
+    \onslide<4->{\left(\frac{x}{x}\right)} \\[12pt]
+    \onslide<5->{&= \frac{6x^3-2x^2}{3x-1}} 
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1 \quad $f(x) = 6x^2 - 2x$ and $g(x) = 3 - \frac{1}{x}$}
+(f) 
+\begin{align*}
+    \left(\frac{f}{g}\right)(x) &= \frac{6x^3-2x^2}{3x-1} \\[12pt]
+    \onslide<2->{&= \frac{2x^2(3x-1)}{3x-1}} \\[12pt]
+    \onslide<3->{&= 2x^2}
+\end{align*}
+\end{frame}
+
+\section{Find the domain of the sum, difference, product, or quotient of two functions}
+
+\begin{frame}{Finding Domain}
+When finding the domain of the sum, difference, product, or quotient of two functions, one method is to analyze the sum/difference/product/quotient \underline{before} simplifying. 
+\end{frame}
+
+\begin{frame}{Example 2}
+(a) \quad   Find the domain of $(f+g)(x)$ if $f(x) = 6x^2 - 2x$ and $g(x) = 3 - \frac{1}{x}$    \newline\\  \pause
+\[(f+g)(x) = 6x^2 - 2x + 3 - \frac{1}{{\color{red}x}}  \]     \pause
+\[ x \neq 0 \]   \pause
+\[ (-\infty, 0) \cup (0, \infty) \]
+\end{frame}
+
+\begin{frame}{Example 2}
+(b) \quad Find the domain of $\left(\frac{f}{g}\right)(x)$ if $f(x) = 6x^2 - 2x$ and $g(x) = 3 - \frac{1}{x}$    \newline\\
+\onslide<2->{For $g(x)$, $x \neq 0$}    
+\end{frame}
+
+\begin{frame}{Example 2}
+For $\frac{6x^2-2x}{3-\frac{1}{x}}$:
+\begin{align*}
+    \onslide<2->{3-\frac{1}{x} &\neq 0} \\[12pt]
+    \onslide<3->{3 &\neq \frac{1}{x}} \\[12pt]
+    \onslide<4->{3x &\neq 1} \\[12pt]
+    \onslide<4->{x &\neq \frac{1}{3}}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 2}
+    \[x \neq 0, \frac{1}{3} \]  \pause \newline\\
+    \[(-\infty, 0) \cup \left(0, \frac{1}{3}\right) \cup \left(\frac{1}{3}, \infty\right)  \]
+\end{frame}
+
+\section{Find the difference quotient of a function}
+
+\begin{frame}{Difference Quotient}
+The \alert{difference quotient} is fundamental to the idea of the \textbf{derivative} in Calculus.    \newline\\  \pause
+
+For a given function, $f$, the difference quotient of $f$ is 
+\[
+    \frac{f(x+h)-f(x)}{h}
+\]
+\pause
+We will break it down into 3 steps: \newline\\
+\begin{enumerate}
+    \item Evaluate $f(x+h)$ \pause
+    \item Subtract original function from that \pause
+    \item Divide that result by $h$
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Example 3}
+Find and simplify the difference quotient for each of the following.    \newline\\
+(a) \quad $f(x) = x^2 - x - 2$
+\begin{align*}
+    \onslide<2->{f(x+h) &= (x+h)^2 - (x+h) - 2} \\[8pt]
+    \onslide<3->{&= x^2 + 2hx + h^2 - x - h - 2} \\[8pt]
+    \onslide<4->{f(x+h)-f(x) &= x^2 + 2hx + h^2 - x - h - 2 - (x^2 - x - 2)}\\[8pt]
+    \onslide<5->{&= x^2 + 2hx + h^2 - x - h - 2 - x^2 + x + 2} \\[8pt]
+    \onslide<6->{&= 2hx + h^2 - h} 
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 3}
+\begin{align*}
+    \frac{f(x+h)-f(x)}{h} &= \frac{2hx + h^2 - h}{h} \\[10pt]
+    \onslide<2->{&= 2x + h - 1}
+\end{align*}
+\end{frame}
+    
+\begin{frame}{Example 3}
+(b) \quad $g(x) = \frac{3}{2x+1}$
+\begin{align*}
+    \onslide<2->{g(x+h) &= \frac{3}{2(x+h)+1}} \\[8pt]
+    \onslide<3->{&= \frac{3}{2x+2h+1}}  \\[8pt]
+    \onslide<4->{g(x+h)-g(x) &= \frac{3}{2x+2h+1} - \frac{3}{2x+1}} \\[10pt]
+    \onslide<5->{\frac{g(x+h)-g(x)}{h} &= \frac{\frac{3}{2x+2h+1} - \frac{3}{2x+1}}{h}}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 3}
+\begin{align*}
+    \frac{g(x+h)-g(x)}{h} &= \frac{\dfrac{3}{2x+2h+1} - \dfrac{3}{2x+1}}{h} 
+    \onslide<2->{\left(\frac{(2x+2h+1)(2x+1)}{(2x+2h+1)(2x+1)}\right)} \\[10pt]
+    \onslide<3->{&=\frac{3(2x+1)-3(2x+2h+1)}{h(2x+2h+1)(2x+1)}} \\[10pt]
+    \onslide<4->{&= \frac{6x+3-6x-6h-3}{h(2x+2h+1)(2x+1)}}  \\[10pt]
+    \onslide<5->{&= \frac{-6h}{h(2x+2h+1)(2x+1)}}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 3}
+\begin{align*}
+    \frac{g(x+h)-g(x)}{h} &= \frac{-6h}{h(2x+2h+1)(2x+1)} \\[12pt]
+    \onslide<2->{&= \frac{-6}{(2x+2h+1)(2x+1)}}
+\end{align*}  
+\end{frame}
+
+\begin{frame}{Example 3}
+(c) \quad $r(x) = \sqrt{x}$
+\begin{align*}
+    \onslide<2->{r(x+h) &= \sqrt{x+h}} \\[10pt]
+    \onslide<3->{r(x+h)-r(x) &= \sqrt{x+h} - \sqrt{x}} \\[10pt]
+    \onslide<4->{\frac{r(x+h)-r(x)}{h} &= \frac{\sqrt{x+h} - \sqrt{x}}{h}}
+    \onslide<5->{\left(\frac{\sqrt{x+h}+\sqrt{x}}{\sqrt{x+h}+\sqrt{x}}\right)}  \\[10pt]
+    \onslide<6->{&=\frac{(\sqrt{x+h})^2-(\sqrt{x})^2 }{h\left(\sqrt{x+h}+\sqrt{x}\right)}}   \\[10pt]
+    \onslide<7->{&= \frac{x+h-x}{h\left(\sqrt{x+h}+\sqrt{x}\right)}}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 3}
+\begin{align*}
+    \frac{r(x+h)-r(x)}{h} &= \frac{x+h-x}{h\left(\sqrt{x+h}+\sqrt{x}\right)}    \\[10pt]
+    \onslide<2->{&= \frac{h}{h\left(\sqrt{x+h}+\sqrt{x}\right)}}    \\[10pt]
+    \onslide<3->{&= \frac{1}{\sqrt{x+h}+\sqrt{x}}}
+\end{align*}
+\end{frame}
+
+
+\end{document}

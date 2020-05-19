@@ -1,0 +1,175 @@
+\documentclass[t,usenames,dvipsnames]{beamer}
+\usetheme{Copenhagen}
+\setbeamertemplate{headline}{} % remove toc from headers
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{amsmath, xcolor, tikz, pgfplots, array, bm}
+
+\pgfplotsset{compat = newest}
+\usetikzlibrary{arrows.meta, calc, decorations.pathreplacing}
+\pgfplotsset{every axis/.append style = {axis lines = middle}}
+\pgfplotsset{every tick label/.append style={font=\scriptsize}}
+\everymath{\displaystyle}
+
+\tikzstyle{input} = [circle, text centered, radius = 1cm, draw = black]
+\tikzstyle{function} = [rectangle, text centered, minimum width = 2cm, minimum height = 1cm, draw = black]
+
+\title{Properties of Logarithms}
+\author{}
+\date{}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Objectives}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\begin{frame}
+    \maketitle
+\end{frame}
+
+\section{Use properties of logarithms to expand logarithmic expressions.}
+
+\begin{frame}{Exponent and Logarithm Properties}
+Exponents and logarithms have similar properties.   \newline\\  
+\setlength{\extrarowheight}{7pt}
+\begin{tabular}{c|c|c}
+    \textbf{Property}    &   \textbf{Exponents}  &   \textbf{Logarithms} \\ \hline
+    \onslide<2->{Product} &   \onslide<3->{$b^x \cdot b^y = b^{x+y}$}   &   \onslide<4->{$\log_b (x) + \log_b (y) = \log_b (xy)$} \\[0.5cm]
+    \onslide<5->{Quotient}    &   \onslide<6->{$\frac{b^x}{b^y} = b^{x-y}$} & \onslide<7->{$\log_b\left(\frac{x}{y}\right) = \log_b (x) - \log_b(y)$} \\[0.5cm]
+    \onslide<8->{Power} & \onslide<9->{$\left(b^x\right)^y = b^{xy}$} & \onslide<10->{$\log_b(x)^y = y\cdot \log_b(x)$} \\[0.5cm]
+    \onslide<11->{Equality}    &   \onslide<12->{$b^x = b^y \Longleftrightarrow x=y$} & \onslide<14->{$\log_b(x) = \log_b(y)\Longleftrightarrow x=y$}   \\[6pt]
+    &   \onslide<13->{$x$ and $y$ are real}    &   \onslide<15->{$x > 0, \, y > 0$}
+\end{tabular}
+\end{frame}
+
+\begin{frame}{Example 1}
+Expand each of the following and simplify numerical values when possible. Assume all quantities represent positive real numbers.  \newline\\
+(a) \quad $\log_2\left(\frac{8}{x}\right)$
+\begin{align*}
+    \onslide<2->{\log_2\left(\frac{8}{x}\right) &= \log_2(8) - \log_2(x) & \text{Quotient Prop.}} \\[10pt]
+    \onslide<3->{&= 3 - \log_2(x) &\log_2 8 = 3}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1}
+(b) \quad $\log_{0.1}\left(10x^2\right)$
+\begin{align*}
+    \onslide<2->{\log_{0.1}\left(10x^2\right) &= \log_{0.1}(10) + \log_{0.1}\left(x^2\right) &\text{Product Prop.}} \\[10pt]
+    \onslide<3->{&= \log_{0.1}(10) + 2\log_{0.1}(x) &\text{Power Prop.}} \\[10pt]
+    \onslide<4->{&= -1 + 2\log_{0.1}(x) &\log_{0.1}(10) = -1} 
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1}
+(c) \quad $\ln\left(\frac{3}{ex}\right)^2$
+\begin{align*}
+    \onslide<2->{\ln\left(\frac{3}{ex}\right)^2 &= 2\ln\left(\frac{3}{ex}\right) &\text{Power Prop.}} \\[8pt]
+    \onslide<3->{&= 2\left(\ln(3) - \ln(ex)\right) &\text{Quotient Prop.}} \\[8pt]
+    \onslide<4->{&= 2\left(\ln(3) - (\ln(e) + \ln(x)\right) &\text{Product Prop.}} \\[8pt]
+    \onslide<5->{&= 2\left(\ln(3) - \ln(e) - \ln(x)\right) &\text{Distribute the negative}} \\[8pt]
+    \onslide<6->{&= 2\left(\ln(3) - 1 - \ln(x)\right) &\ln(e) = 1} \\[8pt]
+    \onslide<7->{&= 2\ln(3) - 2 - 2\ln(x) &\text{Distribute the 2}}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1}
+(d) \quad $\log_{117}\left(x^2-4\right)$
+\begin{align*}
+    \onslide<2->{\log_{117}(x^2-4) &= \log_{117}\left((x+2)(x-2)\right) &\text{Factor $x^2-4$}} \\[8pt]
+    \onslide<3->{&= \log_{117}(x+2) + \log_{117}(x-2) &\text{Product Prop.}}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1}
+(e) \quad $\log\left(\sqrt[3]{\frac{100x^2}{yz^5}}\right)$
+\begin{align*}
+    \onslide<2->{\log\left(\sqrt[3]{\frac{100x^2}{yz^5}}\right) &= \log\left(\frac{100x^2}{yz^5}\right)^{1/3} & \sqrt[3]{a} = a^{1/3}} \\[8pt]
+    \onslide<3->{&= \frac{1}{3}\log\left(\frac{100x^2}{yz^5}\right) &\text{Power Prop.}} \\[8pt]
+    \onslide<4->{&= \frac{1}{3}\left(\log\left(100x^2\right) - \log\left(yz^5\right)\right) &\text{Quotient Prop.}} 
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1}
+$\tfrac{1}{3}\left(\log\left(100x^2\right) - \log\left(yz^5\right)\right)$ 
+\begin{align*}
+    \onslide<2->{&= \tfrac{1}{3}\left(\log(100)+\log(x^2)-\left(\log(y) + \log(z^5)\right)\right) &\text{Product Prop.}}\\[8pt]
+    \onslide<3->{&= \tfrac{1}{3}\left(\log(100) + \log(x^2) - \log(y) - \log(z^5)\right) &\text{Distribute the negative}} \\[8pt]
+    \onslide<4->{&= \tfrac{1}{3}\left(2+\log(x^2)-\log(y)-\log(z^5)\right) &\log(100)=2} \\[8pt]
+    \onslide<5->{&= \tfrac{1}{3}\left(2+2\log(x)-\log(y)-5\log(z)\right) &\text{Power Prop.}} \\[8pt]
+    \onslide<6->{&= \tfrac{2}{3} + \tfrac{2}{3}\log(x) - \tfrac{1}{3}\log(y)-\tfrac{5}{3}\log(z) &\text{Distribute the $\tfrac{1}{3}$}}
+\end{align*}
+\end{frame}
+
+\section{Use properties of logarithms to condense an expression into a single logarithm}
+
+\begin{frame}{Condensing Logarithmic Expressions}
+This is just working backwards from what we did in Example 1. \newline\\
+
+This will come in handy when we solve logarithmic equations that have more than one logarithm.
+\end{frame}
+
+\begin{frame}{Example 2}
+Use the properties of logarithms to write the following as a single logarithm.  \newline\\
+(a) \quad $\log_3(x-1) - \log_3(x+1)$
+\begin{align*}
+    \onslide<2->{\log_3(x-1)-\log_3(x+1) &= \log_3\left(\frac{x-1}{x+1}\right) &\text{Quotient Prop.}}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 2}
+(b) \quad $\log(x) + 2\log(y) - \log(z)$
+\begin{align*}
+    \onslide<2->{\log(x) + 2\log(y) - \log(z) &= \log(x) + \log(y^2) - \log(z) &\text{Power Prop.}} \\[10pt]
+    \onslide<3->{&= \log(xy^2) - \log(z) &\text{Product Prop.}} \\[10pt]
+    \onslide<4->{&= \log\left(\frac{xy^2}{z}\right) &\text{Quotient Prop.}}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 2}
+(c) \quad $4\log_2(x) + 3$
+\begin{align*}
+    \onslide<2->{4\log_2(x) + 3 &= \log_2(x^4) + 3 &\text{Power Prop.}} \\[10pt]
+    \onslide<3->{&=\log_2(x^4) + \log_2(2^3) & \log_2(2^3) = 3} \\[10pt]
+    \onslide<4->{&=\log_2(x^4) + \log_2(8) &2^3=8} \\[10pt]
+    \onslide<5->{&=\log_2(8x^4) &\text{Product Prop.}}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 2}
+(d) \quad $-\ln(x) - \frac{1}{2}$
+\begin{align*}
+    \onslide<2->{-\ln(x) - \tfrac{1}{2} &= \ln\left(x^{-1}\right)-\tfrac{1}{2} &\text{Power Prop.}} \\[10pt]
+    \onslide<3->{&= \ln\left(x^{-1}\right) - \ln\left(e^{1/2}\right) &\tfrac{1}{2} = \ln(e^{1/2})} \\[10pt]
+    \onslide<4->{&= \ln\left(x^{-1}\right) - \ln\left(\sqrt{e}\right) &e^{1/2} = \sqrt{e}} \\[10pt]
+    \onslide<5->{&= \ln\left(\frac{x^{-1}}{\sqrt{e}}\right) &\text{Quotient Prop.}} \\[10pt]
+    \onslide<6->{&= \ln\left(\frac{1}{x\sqrt{e}}\right) &x^{-1} = \tfrac{1}{x}}
+\end{align*}
+\end{frame}
+
+\section{Rewrite a logarithmic expression using the Change of Base Rules}
+
+\begin{frame}{Change of Base Rules}
+Let $a, b >0, \, a,b \neq 1$.   \newline\\
+
+\begin{itemize}
+    \item<2->$a^x = b^{x\log_b(a)}$ for all real numbers $x$. \newline\\
+    \item<3->$\log_a(x) = \frac{\log_b(x)}{\log_b(a)}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example 3}
+Write an equivalent expression for each using base $e$ (natural logarithms).    \newline\\
+(a) \quad $\log_7(2)$
+\onslide<2->{ $= \frac{\ln(2)}{\ln(7)}$}    \\[0.75cm]
+\onslide<3->{(b) \quad $\log(5)$} 
+\onslide<4->{ $ = \frac{\ln(5)}{\ln(10)}$} \\[0.75cm]
+\onslide<5->{(c) \quad $\log(x)$} 
+\onslide<6->{ $ = \frac{\ln(x)}{\ln(10)}$}
+\end{frame}
+
+\end{document}

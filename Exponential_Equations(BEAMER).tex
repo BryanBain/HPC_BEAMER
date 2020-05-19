@@ -1,0 +1,201 @@
+\documentclass[t,usenames,dvipsnames]{beamer}
+\usetheme{Copenhagen}
+\setbeamertemplate{headline}{} % remove toc from headers
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{amsmath, xcolor, tikz, pgfplots, array, bm}
+
+\pgfplotsset{compat = newest}
+\usetikzlibrary{arrows.meta, calc, decorations.pathreplacing}
+\pgfplotsset{every axis/.append style = {axis lines = middle}}
+\pgfplotsset{every tick label/.append style={font=\scriptsize}}
+\everymath{\displaystyle}
+
+\tikzstyle{input} = [circle, text centered, radius = 1cm, draw = black]
+\tikzstyle{function} = [rectangle, text centered, minimum width = 2cm, minimum height = 1cm, draw = black]
+
+\title{Exponential Equations}
+\author{}
+\date{}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Objectives}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\begin{frame}
+    \maketitle
+\end{frame}
+
+\section{Solve exponential equations}
+
+\begin{frame}{Exponential Equations}
+    An \alert{exponential equation} is an equation involving exponential functions.   
+    
+    \onslide<2->{\[2^x = 128\]}
+    \onslide<3->{\[x = 7\]}
+    
+    \onslide<4->{\[ 2^x = 129 \]}
+\end{frame}
+
+\begin{frame}{General Technique for Solving Exponential Equations}
+\begin{itemize}
+    \item<2->Isolate the exponential function \newline\\
+    \begin{itemize}
+        \item<3->If convenient, express both sides with a common base and equate the exponents.  \newline\\
+        \item<4->Else, take the logarithm of both sides; (\emph{recommendation:} Use the same base for logarithm as exponent).
+    \end{itemize}
+\end{itemize}
+\begin{align*}
+    \onslide<5->{2^x &= 129} \\[4pt]
+    \onslide<6->{\log_2 (2^x) &= \log_2(129)} \\[4pt]
+    \onslide<7->{x &= \log_2(129)} \\[4pt]
+    \onslide<8->{ &\approx 7.0112}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1}
+Solve each. Round your answers to 4 decimal places. \newline\\
+(a) \quad $2^{3x} = 16^{1-x}$
+\begin{align*}
+    \onslide<2->{2^{3x} &= \left(2^4\right)^{1-x} & 16=2^4} \\[6pt]
+    \onslide<3->{2^{3x} &= 2^{4-4x} &\text{Power Prop.}} \\[6pt]
+    \onslide<4->{3x &= 4 - 4x &\text{Equality Prop.}} \\[6pt]
+    \onslide<5->{7x &= 4 &} \\[6pt]
+    \onslide<6->{x &= \frac{4}{7} &} \\[6pt]
+    \onslide<7->{ &\approx 0.5714 &}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1 Alternate Method}
+\begin{align*}
+    2^{3x} &= 16^{1-x} \\[6pt]
+    \onslide<2->{\log_2\left(2^{3x}\right) &= \log_2\left(16^{1-x}\right) &} \\[6pt]
+    \onslide<3->{3x\cdot \log_2(2) &= (1-x)\cdot \log_2(16) &\text{Power Prop.}} \\[6pt]
+    \onslide<4->{3x &= (1-x)\cdot 4 &\log_2(16)=4} \\[6pt]
+    \onslide<5->{3x &= 4-4x} \\[6pt]
+    \onslide<6->{x &= \frac{4}{7}}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1}
+(b) \quad $2000 = 1000 \cdot 3^{-0.1t}$
+\begin{align*}
+    \onslide<2->{2 &= 3^{-0.1t}&\text{Isolate expon. func.}} \\[6pt]
+    \onslide<3->{\log_3(2) &= \log_3(3^{-0.1t}) &} \\[6pt]
+    \onslide<4->{\log_3(2) &= -0.1t \cdot \log_3(3) &\text{Power Prop.}} \\[6pt]
+    \onslide<5->{\log_3(2) &= -0.1t &\log_3(3) = 1} \\[6pt]
+    \onslide<6->{t &= \frac{\log_3(2)}{-0.1}&} \\[6pt]
+    \onslide<7->{t &\approx -6.3093 &}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1}
+(c) \quad $9 \cdot 3^x = 7^{2x}$
+\begin{align*}
+    \onslide<2->{3^2 \cdot 3^x &= 7^{2x} &9=3^2} \\[6pt]
+    \onslide<3->{3^{2+x} &= 7^{2x} &\text{Product Prop.}} \\[6pt]
+    \onslide<4->{\log_3(3^{2+x}) &= \log_3(7^{2x})&} \\[6pt]
+    \onslide<5->{(2+x)\cdot \log_3(3) &= 2x \cdot \log_3(7)&\text{Power Prop.}} \\[6pt]
+    \onslide<6->{2+x &= 2x\cdot \log_3(7) &\log_3(3) = 1} \\[6pt]
+    \onslide<7->{2 &= -x + 2x\cdot\log_3(7) &\text{Subtract $x$}} \\[6pt]
+    \onslide<8->{2 &= x(-1+2\log_3(7)) &\text{Factor out $x$}} \\[6pt]
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1}
+\begin{align*}
+    2 &= x(-1+2\log_3(7)) &\text{Factor out $x$} \\[15pt]
+    \onslide<2->{x &= \frac{2}{-1+2\log_3(7)}&} \\[15pt]
+    \onslide<3->{x &\approx 0.7866&}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1}
+(d) \quad $75 = \frac{100}{1+3e^{-2t}}$
+\begin{align*}
+    \onslide<2->{75(1+3e^{-2t}) &= 100 &\text{Eliminate fraction}} \\[6pt]
+    \onslide<3->{1+3e^{-2t} &= \frac{4}{3} &\text{Divide by 75}} \\[6pt]
+    \onslide<4->{3e^{-2t} &= \frac{1}{3} &\text{Subtract 1}} \\[6pt]
+    \onslide<5->{e^{-2t} &= \frac{1}{9} &\text{Divide by 3}} \\[6pt]
+    \onslide<6->{\ln\left(e^{-2t}\right) &= \ln\left(\frac{1}{9}\right)&}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1}
+\begin{align*}
+    \ln\left(e^{-2t}\right) &= \ln\left(\frac{1}{9}\right)& \\[10pt]
+    \onslide<2->{-2t\cdot \ln e &= \ln\left(\frac{1}{9}\right) &\text{Power Prop.}} \\[10pt]
+    \onslide<3->{-2t &= \ln\left(\frac{1}{9}\right)&\ln e = 1} \\[10pt]
+    \onslide<4->{t &= \frac{\ln\left(\frac{1}{9}\right)}{-2}} \\[10pt]
+    \onslide<5->{t &\approx 1.099 &}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1}
+(e) \quad $25^x = 5^x + 6$
+\begin{align*}
+    \onslide<2->{\left(5^2\right)^x &= 5^x + 6 &25=5^2} \\[6pt]
+    \onslide<3->{5^{2x} &= 5^x + 6 &\text{Power Prop.}} \\[6pt]
+    \onslide<4->{\left({\color{red}5^x}\right)^2 &= {\color{red}5^x} + 6 &5^{2x}=(5^x)^2}
+\end{align*}
+\onslide<5->{Let $u = {\color{red}5^x}$}
+\begin{align*}
+    \onslide<6->{u^2 &= u + 6 &\text{Using substitution}} \\[4pt]
+    \onslide<7->{u^2 - u - 6 &= 0&} \\[4pt]
+    \onslide<8->{u &= -2, \, 3&} 
+\end{align*}
+\onslide<9->{\[{\color{red}5^x} = -2 \qquad \text{and} \qquad {\color{red}5^x} = 3\]}
+\end{frame}
+
+\begin{frame}{Example 1}
+\begin{align*}
+    5^x&=-2 & 5^x&=3 \\[8pt]
+    \onslide<2->{x\cdot\log_5(5)&=\log_5(-2) & x\cdot \log_5(5) &= \log_5(3)} \\[8pt]
+    \onslide<3->{x &=\log_5(-2) & x&=\log_5(3)} \\[8pt]
+    \onslide<4->{x &= \varnothing & x &\approx 0.6826}
+\end{align*}
+\onslide<5->{\[x \approx 0.6826\]}
+\end{frame}
+
+\begin{frame}{Example 1}
+(f) \quad $\frac{e^x - e^{-x}}{2} = 5$
+\begin{align*}
+    \onslide<2->{e^x - e^{-x} &= 10 &\text{Eliminate fraction}} \\[8pt]
+    \onslide<3->{e^x - \frac{1}{e^x} &= 10 &e^{-x}=\tfrac{1}{e^x}} \\[8pt]
+    \onslide<4->{e^{2x}-1&=10e^x &\text{Multiply by $e^x$}} \\[8pt]
+    \onslide<5->{e^{2x}-10e^x-1 &= 0 &}
+\end{align*}
+\onslide<6->{Let u = $e^x$}
+\onslide<7->{\[u^2 - 10u - 1 = 0\]}
+\end{frame}
+
+\begin{frame}{Example 1 \quad letting $u = e^x$}
+    \[u^2 - 10u - 1 = 0\]
+\begin{align*}
+  \onslide<2->{u &= \frac{10 \pm \sqrt{10^2-4(1)(-1)}}{2}} \\[8pt]
+  \onslide<3->{u &= \frac{10\pm \sqrt{104}}{2}} \\[8pt]
+  \onslide<4->{u &= \frac{10 \pm 2\sqrt{26}}{2}} \\[8pt]
+  \onslide<5->{u &= 5 \pm \sqrt{26}} \\[8pt]
+  \onslide<6->{e^x &= 5 \pm \sqrt{26}}
+\end{align*}
+\end{frame}
+
+
+\begin{frame}{Example 1}
+    \begin{align*}
+        e^x &= 5 + \sqrt{26} & e^x &= 5 - \sqrt{26} \\[8pt]
+    \onslide<2->{\ln(e^x) &= \ln(5+\sqrt{26}) & \ln(e^x) &= \ln(5-\sqrt{26})} \\[8pt]
+    \onslide<3->{x \ln e &= \ln(5 + \sqrt{26}) & x \ln e &= \ln(5 - \sqrt{26})} \\[8pt]
+    \onslide<4->{x &= \ln(5+\sqrt{26}) & x &= \ln(5-\sqrt{26})} \\[8pt]
+    \onslide<5->{x &\approx 2.312 & x &= \varnothing} 
+    \end{align*}
+    \onslide<6->{\[x \approx 2.312\]}
+\end{frame}
+
+\end{document}
