@@ -28,6 +28,7 @@ Beamer slides for Honors PreCalculus notes
   <li>Graphs of Sine and Cosine Functions</li>
   <li>Graphs of Other Trig Functions</li>
   <li>Inverse Trig Functions</li>
+  <li>Trig Identities</li>
   <li>Trig Equations</li>
   <li>Law of Sines and Law of Cosines</li>
   <li>Area of Triangles</li>
